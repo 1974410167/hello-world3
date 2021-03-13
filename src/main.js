@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 // Vue.prototype.$ = $
 // Vue.use(axios)
 Vue.prototype.$axios = axios
-axios.defaults.baseURL = '121.36.25.146:5637'
+axios.defaults.baseURL = 'http://121.36.25.146:5637'
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 new Vue({
