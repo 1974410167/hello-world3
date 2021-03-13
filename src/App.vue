@@ -22,20 +22,12 @@
 
           </div>
           <div class="collapse navbar-collapse" id="header-navbar">
-<!--            <form class="navbar-form visible-xs" action="#" method="POST">-->
-<!--              <div class="input-group">-->
-<!--                <input type="text" name="keyword" class="form-control" placeholder="请输入关键字" maxlength="20" autocomplete="off">-->
-<!--                <span class="input-group-btn">-->
-<!--                                <button type="submit" class="btn btn-default btn-search">搜索</button>-->
-<!--                            </span>-->
-<!--              </div>-->
-<!--            </form>-->
+
 
             <ul class="nav navbar-nav navbar-right">
 
-              <li><a style="padding-top: 30px"><router-link to="/">首页</router-link></a></li>
-<!--              <li><router-link to="/idea">想法</router-link></li>-->
-              <li><a style="padding-top: 30px"><router-link to="/about">关于</router-link></a></li>
+              <li><a><router-link to="/">首页</router-link></a></li>
+              <li><a><router-link to="/about">关于</router-link></a></li>
 
             </ul>
 
@@ -54,39 +46,6 @@
 
           <router-view></router-view>
 
-<!--          <nav aria-label="Page navigation">-->
-<!--            <ul class="pagination">-->
-
-<!--              <li>-->
-
-<!--                <router-link :to="{name:'home',params:{-->
-<!--                  page:'previous',-->
-<!--                }}">-->
-<!--                <a href="#" aria-label="Previous">-->
-<!--                  <span aria-hidden="true">&laquo;</span>-->
-<!--                </a>-->
-<!--                </router-link>-->
-<!--              </li>-->
-
-<!--              <li><a href="#">1</a></li>-->
-<!--              <li><a href="#">2</a></li>-->
-<!--              <li><a href="#">3</a></li>-->
-<!--              <li><a href="#">4</a></li>-->
-<!--              <li><a href="#">5</a></li>-->
-
-<!--              <router-link :to="{name:'home',params:{-->
-<!--                  page:'next',-->
-<!--                }}">-->
-<!--              <li>-->
-<!--                <a href="#" aria-label="Next">-->
-<!--                  <span aria-hidden="true">&raquo;</span>-->
-<!--                </a>-->
-<!--              </li>-->
-<!--              </router-link>-->
-
-
-<!--            </ul>-->
-<!--          </nav>-->
 
         </div>
 
@@ -177,7 +136,8 @@
 
     <div class="footer">
       <div class="container">
-        <p>Copyright &copy; 2018.Reedo.Inc All rights reserved</p>
+        <p>HYuan的个人网站@Copyright 2020-2021</p>
+          <p>本网站运行在华为云&nbsp;|&nbsp;豫ICP备2020030480号</p>
       </div>
     </div>
 
@@ -241,8 +201,25 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
  @import "assets/css/style.css";
+ /*ul li a{*/
+ /*"padding-top":30px,*/
+ /* "color": #777;*/
+ /*}*/
+ /*.navbar-default .navbar-nav>li>a {*/
+ /*  color: #777;*/
+ /*  margin-top:27px;*/
+ /*}*/
+ /*#header-navbar > ul > li:nth-child(1) > a > a*/
+ #header-navbar > ul > li{
+   color: #777;
+ }
+ ul li a a{
+   text-decoration: none;
+   color: #777;
+
+ }
 </style>
 
 

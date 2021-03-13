@@ -13,7 +13,10 @@ const routes = [
   {
     path: '/home/:pro',
     name: 'home',
-    component: Home
+    component: Home,
+    meta:{
+      title:'主页'
+    }
   },
 
   {
@@ -24,22 +27,34 @@ const routes = [
     path: '/ret_cate/:id',
     name:"retrieve_category",
     component: retrieve_category,
+    meta:{
+      title:'分类'
+    }
   },
   {
     path: '/ret_tag/:id',
     name:"ret_tag",
     component: retrieve_tag,
+    meta:{
+      title:"标签"
+    }
   },
   {
     path:'/post/:id',
     name:"ret_post",
     component: post_detail,
+    meta:{
+      title: "文章"
+    }
   },
 
   {
     path:'/archives/:year/:month',
     name:"archives",
     component: archives,
+    meta:{
+      title: "归档"
+    }
   },
 
   {
@@ -48,7 +63,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    meta:{
+      title: "关于"
+    }
   }
 ]
 

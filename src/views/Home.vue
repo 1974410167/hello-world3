@@ -57,7 +57,7 @@ export default {
   created() {
 
     this.get_page('1');
-
+    document.title = this.$route.meta.title;
     },
 
   methods:{

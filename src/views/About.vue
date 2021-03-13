@@ -24,6 +24,7 @@ export default {
     }
   },
   created() {
+    document.title = this.$route.meta.title;
     this.$axios.get(this.url).then(
         res => {
           this.text = res.data
