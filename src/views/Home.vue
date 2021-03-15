@@ -87,8 +87,15 @@ export default {
           res => {
 
             this.posts = res.data.results;
-            this.previous = res.data.previous;
-            this.next = res.data.next;
+            var p = res.data.previous;
+            if (p!=null){
+              this.previous = p.slice(0,20)+":5637"+p.slice(20);
+            }
+
+            var n = res.data.next;
+            if(n!=null){
+              this.next = n.slice(0,20)+":5637"+n.slice(20);
+            }
             this.count = res.data.count;
           })
     },
