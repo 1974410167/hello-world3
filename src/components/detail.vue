@@ -79,17 +79,27 @@ export default {
     }
   },
   methods:{
-    post_comment:function (){
+    post_comment:function () {
+      let name_t = '访客';
+      let email_t = 'fangke@qq.com';
 
-      if(this.name==""){
-        this.name = '访客';
+      if (this.name == ""&& this.email!="") {
+        this.help(this.email,name_t);
+      } else if(this.email == "" && this.name!="") {
+        this.help(email_t,this.name);
+      }else if(this.email=="" && this.name==""){
+        this.help(email_t,name_t);
+      }else if(this.email!="" && this.name!=""){
+        this.help(this.email,this.name)
       }
-      if(this.email==""){
-        this.email='fangke@qq.com'
-      }
-      this.$axios.post('http://127.0.0.1:8000/post/comment/',{
-        name:this.name,
-        email:this.email,
+
+    },
+
+    help(email,name){
+
+      this.$axios.post('/post/comment/',{
+        name:name,
+        email:email,
         text:this.text,
         post:this.post_id,
         headers:{
@@ -97,17 +107,15 @@ export default {
         }
       }).then(function (res){
         var status = res.status;
-        console.log(res)
-        console.log(status)
         if(status==201){
-          alert("发布成功")
+          // this.$router.go(0)
+        location.reload()
         }else{
           alert("发布失败")
         }
       }).catch(function (error){
         console.log(error)
       })
-
     }
   }
 
